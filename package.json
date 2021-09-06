@@ -1,0 +1,40 @@
+{
+  "name": "@armachovsk/meme-master",
+  "version": "1.0.0",
+  "description": "Discord bot",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Armachovsk/MemeMaster.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "armachovsk"
+  ],
+  "author": "Andrii Shafar <andrii.shafar@uzhnu.edu.ua>",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/Armachovsk/MemeMaster/issues"
+  },
+  "homepage": "https://github.com/Armachovsk/MemeMaster#readme",
+  "dependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@oclif/errors": "^1.3.5",
+    "@oclif/plugin-plugins": "^1.10.1",
+    "discord-api-types": "^0.22.0",
+    "discord.js": "^13.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.3.2"
+  }
+}
