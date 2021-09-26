@@ -15,5 +15,16 @@ client.on("ready", async () => {
   console.log(`Logged in as ${client.user.tag}!`)
 })
 
+client.on("presenceUpdate", (_0, newPresence) => {
+  const member = newPresence.member
+  const guild = newPresence.guild
+
+  if (
+    isArmachovsk(guild) &&
+    isReidondUser(member) &&
+    newPresence.status === PresenceUpdateStatus.Online
+  ) {
+  }
+})
 
 export { client }
