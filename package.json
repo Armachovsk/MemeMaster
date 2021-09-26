@@ -35,6 +35,7 @@
     "ffmpeg": "^0.0.4",
     "fluent-ffmpeg": "^2.1.2",
     "nanocolors": "^0.2.9",
+    "nanostores": "^0.4.8",
     "ytdl-core": "^4.9.1"
   },
   "devDependencies": {
