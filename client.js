@@ -1,6 +1,8 @@
 import { PresenceUpdateStatus } from "discord-api-types/v9"
 import { Client, Intents } from "discord.js"
+import { isArmachovsk, isReidondUser } from "./check_states.js"
 import { rainbowLog } from "./log.js"
+import { addChannelCandidate, channelCandidates } from "./channel_candidates.js"
 
 const intents = new Intents()
 intents.add(
@@ -15,7 +17,7 @@ client.on("ready", async () => {
   rainbowLog(`Logged in as ${client.user.tag}!`)
 })
 
-client.on("presenceUpdate", (_0, newPresence) => {
+client.on("presenceUpdate", async (_0, newPresence) => {
   const member = newPresence.member
   const guild = newPresence.guild
 
@@ -24,6 +26,15 @@ client.on("presenceUpdate", (_0, newPresence) => {
     isReidondUser(member) &&
     newPresence.status === PresenceUpdateStatus.Online
   ) {
+    ;(await guild.channels.fetch())
+      .filter(
+        (c) =>
+          c.type === "GUILD_VOICE" && guild.afkChannelId !== c.id && !c.full,
+      )
+      .map((c) => addChannelCandidate(c))
+
+    for (const cc of channelCandidates) {
+    }
   }
 })
 
