@@ -1,7 +1,6 @@
 import { PresenceUpdateStatus } from "discord-api-types/v9"
 import { Client, Intents } from "discord.js"
-import { devChannelId, isArmachovsk, isReidondUser } from "./check_states.js"
-import { consoleLogOnReady } from "./log.js"
+import { rainbowLog } from "./log.js"
 
 const intents = new Intents()
 intents.add(
@@ -13,7 +12,7 @@ intents.add(
 const client = new Client({ intents })
 
 client.on("ready", async () => {
-  consoleLogOnReady(client)
+  rainbowLog(`Logged in as ${client.user.tag}!`)
 })
 
 client.on("presenceUpdate", (_0, newPresence) => {
